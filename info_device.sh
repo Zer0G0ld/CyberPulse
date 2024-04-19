@@ -11,7 +11,7 @@ fi
 
 # Configurações
 LOG_FILE="$HOME/device_info.log"
-CHECK_INTERVAL=300 # 5 minutos em segundos
+CHECK_INTERVAL=60 # 1 minutos em segundos
 JSON_FILE="/data/data/com.termux/files/usr/share/apache2/default-site/htdocs/device_info.json"
 WEBSITE_DIR="/data/data/com.termux/files/usr/share/apache2/default-site/htdocs"
 WEBSITE_HTML="$WEBSITE_DIR/index.html"
@@ -25,7 +25,7 @@ enviar_notificacao() {
         --vibrate 1000 \
         --button1 "Abrir Configurações" \
         --button1-action "am start -a android.intent.action.VIEW -n com.android.settings/.Settings" \
-        --button2 "Abrir navegador" \
+        --button2 "Abrir Navegador" \
         --button2-action "am start -a android.intent.action.VIEW -n com.android.chrome/com.google.android.apps.chrome.Main http://127.0.0.1:8080"
 
 }
